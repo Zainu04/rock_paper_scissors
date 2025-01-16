@@ -36,8 +36,8 @@ const game = () => {
                     setTimeout(() => {
                         compareHands(this.textContent, computerChoice);
 
-                        playerHand.src = `/Users/zainabakhtar/Desktop/repos/rock_paper_scissors/assets/${this.textContent.toLowerCase()}.png`;
-                        computerHand.src = `/Users/zainabakhtar/Desktop/repos/rock_paper_scissors/assets/${computerChoice.toLowerCase()}.png`;
+                        playerHand.src = `assets/${this.textContent.toLowerCase()}.png`;
+                        computerHand.src = `assets/${computerChoice.toLowerCase()}.png`;
                     }, 2000);
 
                     playerHand.style.animation = "shakePlayer 2s ease";
