@@ -37,13 +37,8 @@ function playRound(humanChoice, computerChoice) {
 
 /* Function to play the game */
 function playGame() {
-    console.log("Starting the game...");
-    for (let round = 1; round <= 5; round++) {
-        console.log(`Round ${round}:`);
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
-        console.log(`You chose: ${humanChoice}`);
-        console.log(`Computer chose: ${computerChoice}`);
         console.log(playRound(humanChoice, computerChoice));
         console.log(`Scores -> You: ${humanScore}, Computer: ${computerScore}`);
     }
@@ -58,7 +53,37 @@ function playGame() {
     } else {
         console.log("It's a tie game!");
     }
-}
+
 
 /* Start the game */
 playGame();
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+
+const content = document.createElement("div");
+
+const rockBtn = document.createElement("button");
+rockBtn.textContent = "Rock";
+rockBtn.addEventListener("click", function () {
+    console.log(playRound("Rock", computerChoice));
+});
+content.appendChild(rockBtn);
+
+const paperBtn = document.createElement("button");
+paperBtn.textContent = "Paper";
+paperBtn.addEventListener("click", function () {
+   console.log(playRound("Paper", computerChoice));
+});
+content.appendChild(paperBtn);
+
+const scissorBtn = document.createElement("button");
+scissorBtn.textContent = "Scissors";
+scissorBtn.addEvenListener ("click", function () {
+    console.log(playRound("Scissors", computerChoice));
+});
+content.appendChild(scissorBtn);
+
+const results = document.createElement("div");
+results.textContent = console.log(`Scores -> You: ${humanScore}, Computer: ${computerScore}`);
+content.appendChild(results);
